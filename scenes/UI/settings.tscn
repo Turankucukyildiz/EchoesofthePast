@@ -1,0 +1,275 @@
+[gd_scene load_steps=5 format=3 uid="uid://byqh00ysgnehk"]
+
+[ext_resource type="Script" uid="uid://c0yhj4cf3h2pp" path="res://scripts/settings.gd" id="1_t8pki"]
+[ext_resource type="Theme" uid="uid://q7m50n5tjt13" path="res://themes/hslider.tres" id="2_32w1k"]
+[ext_resource type="Theme" uid="uid://dqhldac7n7csu" path="res://themes/label.tres" id="2_emn88"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i4dvr"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t8pki")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11764706, 0.11764706, 0.18039216, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="Settings" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Settings" type="Label" parent="MarginContainer/Settings"]
+layout_mode = 2
+theme = ExtResource("2_emn88")
+theme_override_colors/font_color = Color(0.5803922, 0.8862745, 0.8352941, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS"
+
+[node name="AudioSettings" type="VBoxContainer" parent="MarginContainer/Settings"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Audio" type="Label" parent="MarginContainer/Settings/AudioSettings"]
+layout_mode = 2
+theme = ExtResource("2_emn88")
+theme_override_colors/font_color = Color(0.6509804, 0.8901961, 0.6313726, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 18
+text = "AUDIO"
+
+[node name="MasterVolumeSettings" type="HBoxContainer" parent="MarginContainer/Settings/AudioSettings"]
+layout_mode = 2
+
+[node name="MasterVolume" type="Label" parent="MarginContainer/Settings/AudioSettings/MasterVolumeSettings"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme = ExtResource("2_emn88")
+theme_override_colors/font_color = Color(0.9764706, 0.8862745, 0.6862745, 1)
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="MasterVolumeSlider" type="HSlider" parent="MarginContainer/Settings/AudioSettings/MasterVolumeSettings"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("2_32w1k")
+theme_override_constants/center_grabber = 1
+max_value = 1.0
+step = 0.01
+value = 1.0
+tick_count = 10
+ticks_position = 3
+
+[node name="Controls" type="VBoxContainer" parent="MarginContainer/Settings"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Controls" type="Label" parent="MarginContainer/Settings/Controls"]
+layout_mode = 2
+theme = ExtResource("2_emn88")
+theme_override_colors/font_color = Color(0.6509804, 0.8901961, 0.6313726, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 18
+text = "CONTROLS"
+
+[node name="MovingControls" type="VBoxContainer" parent="MarginContainer/Settings/Controls"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Move" type="HBoxContainer" parent="MarginContainer/Settings/Controls/MovingControls"]
+layout_mode = 2
+
+[node name="Move" type="Label" parent="MarginContainer/Settings/Controls/MovingControls/Move"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme = ExtResource("2_emn88")
+theme_override_colors/font_color = Color(0.9764706, 0.8862745, 0.6862745, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+text = "Move"
+horizontal_alignment = 1
+
+[node name="WASD" type="Label" parent="MarginContainer/Settings/Controls/MovingControls/Move"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme = ExtResource("2_emn88")
+theme_override_colors/font_color = Color(0.9764706, 0.8862745, 0.6862745, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+text = "A/D"
+horizontal_alignment = 1
+
+[node name="Jump" type="HBoxContainer" parent="MarginContainer/Settings/Controls/MovingControls"]
+layout_mode = 2
+
+[node name="Jump" type="Label" parent="MarginContainer/Settings/Controls/MovingControls/Jump"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme = ExtResource("2_emn88")
+theme_override_colors/font_color = Color(0.9764706, 0.8862745, 0.6862745, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+text = "Jump"
+horizontal_alignment = 1
+
+[node name="Space" type="Label" parent="MarginContainer/Settings/Controls/MovingControls/Jump"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme = ExtResource("2_emn88")
+theme_override_colors/font_color = Color(0.9764706, 0.8862745, 0.6862745, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+text = "Space"
+horizontal_alignment = 1
+
+[node name="Sprint" type="HBoxContainer" parent="MarginContainer/Settings/Controls/MovingControls"]
+layout_mode = 2
+
+[node name="Sprint" type="Label" parent="MarginContainer/Settings/Controls/MovingControls/Sprint"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme = ExtResource("2_emn88")
+theme_override_colors/font_color = Color(0.9764706, 0.8862745, 0.6862745, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+text = "Sprint"
+horizontal_alignment = 1
+
+[node name="Shift" type="Label" parent="MarginContainer/Settings/Controls/MovingControls/Sprint"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme = ExtResource("2_emn88")
+theme_override_colors/font_color = Color(0.9764706, 0.8862745, 0.6862745, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+text = "Shift"
+horizontal_alignment = 1
+
+[node name="MovementRecordingControls" type="VBoxContainer" parent="MarginContainer/Settings/Controls"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="StartMovementRecording" type="HBoxContainer" parent="MarginContainer/Settings/Controls/MovementRecordingControls"]
+layout_mode = 2
+
+[node name="StartMovementRecording" type="Label" parent="MarginContainer/Settings/Controls/MovementRecordingControls/StartMovementRecording"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme = ExtResource("2_emn88")
+theme_override_colors/font_color = Color(0.9764706, 0.8862745, 0.6862745, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+text = "Start Movement Recording"
+horizontal_alignment = 1
+
+[node name="R" type="Label" parent="MarginContainer/Settings/Controls/MovementRecordingControls/StartMovementRecording"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme = ExtResource("2_emn88")
+theme_override_colors/font_color = Color(0.9764706, 0.8862745, 0.6862745, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+text = "R"
+horizontal_alignment = 1
+
+[node name="StopMovementRecording" type="HBoxContainer" parent="MarginContainer/Settings/Controls/MovementRecordingControls"]
+layout_mode = 2
+
+[node name="StopMovementRecording" type="Label" parent="MarginContainer/Settings/Controls/MovementRecordingControls/StopMovementRecording"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme = ExtResource("2_emn88")
+theme_override_colors/font_color = Color(0.9764706, 0.8862745, 0.6862745, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+text = "Stop Movement Recording"
+horizontal_alignment = 1
+
+[node name="S" type="Label" parent="MarginContainer/Settings/Controls/MovementRecordingControls/StopMovementRecording"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme = ExtResource("2_emn88")
+theme_override_colors/font_color = Color(0.9764706, 0.8862745, 0.6862745, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+text = "S"
+horizontal_alignment = 1
+
+[node name="GhostControls" type="VBoxContainer" parent="MarginContainer/Settings/Controls"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="IncreaseReplaySpeed" type="HBoxContainer" parent="MarginContainer/Settings/Controls/GhostControls"]
+layout_mode = 2
+
+[node name="IncreaseReplaySpeed" type="Label" parent="MarginContainer/Settings/Controls/GhostControls/IncreaseReplaySpeed"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme = ExtResource("2_emn88")
+theme_override_colors/font_color = Color(0.9764706, 0.8862745, 0.6862745, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+text = "Increase Replay Speed"
+horizontal_alignment = 1
+
+[node name="W" type="Label" parent="MarginContainer/Settings/Controls/GhostControls/IncreaseReplaySpeed"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme = ExtResource("2_emn88")
+theme_override_colors/font_color = Color(0.9764706, 0.8862745, 0.6862745, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+text = "W"
+horizontal_alignment = 1
+
+[node name="PressEscToExitSettings" type="Label" parent="MarginContainer/Settings"]
+layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("2_emn88")
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 14
+text = "Press Esc to exit settings"
+label_settings = SubResource("LabelSettings_i4dvr")
+horizontal_alignment = 1
+
+[connection signal="value_changed" from="MarginContainer/Settings/AudioSettings/MasterVolumeSettings/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
